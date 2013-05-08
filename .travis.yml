@@ -1,0 +1,116 @@
+language: php
+php:
+  - 5.3
+branches:
+  except:
+    - gh-pages
+before_script:
+  - sudo apt-get install subversion
+script:
+  - (cd ..; svn co svn://svn.zabbix.com/branches/2.0/frontends/php zabbix)
+  - make build
+after_script:
+  - if [ $TRAVIS_SECURE_ENV_VARS == true ]; then make commitbuild; fi
+env:
+  global:
+  - secure: |-
+      P/vePMi5LNJ4BzFBsOqzG7kPQLWfaPQlD8bgIQfmIYVxO/Qqv+ddoGlrtB1K
+      zqMCbuAce61hy/fN4GhYYGMtxe+ArQAPkOAw5TPDEsPG8RC35+twUIr4NnVG
+      FLhFtpjqi6vKQjDM1lBecsIENUKnrNcOHHx4jz3b+BuCCcK0/kw=
+  - secure: |-
+      i71JIOHKDTCy0W2PXoOEc3P7iplZ4c+aCA4dDlkua5ZWDm0WcSbiR3z3cW3D
+      rswTU/Sd8wkyYC+Z01T8OLoEf5j8aXHnZ/tp3/+8+iOWiWqJFeEzv8fUJJm8
+      3GpEzLmSNL8cwTFS3P7DWtFfCGKCZ44l4lwCzUohPa88wChKooM=
+  - secure: |-
+      a8/8qaLoX8Px2p9vXWmtm7Rbc4GgzV/vvgytMNJlgfZIP0Ii8Y63Cb8JZznC
+      MjabOYGoAABy8ELYVXoYspshkXWw3eHxhUYI8orXz3TkG4sYBPkNIdPkBVd3
+      W8eUTScWq/NPsOj30gTifzqn71oKVxiVEVKWXP7KQEa2KE3Prms=
+  - secure: |-
+      G35zb9b6GFOkUm5TLMSesRyXN9a029i6IbnyTtouLUneYqDR/6FuX6iS5SA0
+      2esv+2oUK5kcehp3y0Nx45UNMKYYW6jRdGjk5Vf4uPoHnuR1S/y1SBlsn4D8
+      4+QyQTEnfaXqm+dHz3AW9WAHEdrw7Tpc6fSYOyqabKns/rHZ+J0=
+  - secure: |-
+      FamJl5OKvU9P0dv3dKe9iTpSPoKH/7AjWooOyFzdVu7tB4s8T5OEiPfrWB24
+      HV2fwfxNldB0Yzci34DdyYg8R1r7cXQ6WffToKRw2dzyDlDD6IUfYdPbDf5B
+      baWEKuXhdr4xQSm3/e7M4K2OAxA5HI2OyMy+XLZcrR5zOI70qcM=
+  - secure: |-
+      QRXw9EY5W9P1Peig7OsSIptSiK19724f7d/DaB1biWgH/H7IZwJXe4RpU9Dn
+      tDKE9hinl4ygCfCYzwo7HZsRFLGYwERJ1xB8/OF7BeDJV01HbwPLqkwCZn9L
+      PHsMHwjff1WVrySSnUzNO9obKbivPTnLC+JEGR30KPDQfqCyKhA=
+  - secure: |-
+      L/5IQ7Xso7gGwC2s6W5LuQGF5n6sVFGJFD36DhTOH436z5eRgMyZQKl75Znk
+      VObz53PipS494Db+VyN2UOJnEyZN/cBDqYR0omRFc+pIfPiF/CuIcr2YX4uR
+      7xVaeHu7p4RDaFMESTuX979azMQTswwmxy7b2L/tK8xtGeLGLec=
+  - secure: |-
+      T2xUPKBn8VdY39ll7NqBOdXdePF3gde97zVmvIkjv2BSmeImzZ0KkWxjvGju
+      7/oyN1RrP37qs/FgmZWwLbYfMJQWbD32C3weo21Ng3pGrWf5+ED4EOqvItwj
+      FwRu1EYjW0Xy5AU4lpBcirQhub9sjwV6wrYsJliR1Kp+aeXGFig=
+  - secure: |-
+      Pu4FqeelXdh7I3nY43iWh4u0c93R45yrlhNPNieJOCBkUa5hY3Uc0Xk56MQR
+      9cOcqlWtbjpl8/S/0K9V4S0RAEGf+1U7BXzIvhArGhJy76vcrciYaV7Ou0Z7
+      nE+Ja6o5425zaSTWbCNvYW5xwUiBz6j1tiMtbV68ghyzIW9lNGQ=
+  - secure: |-
+      VjCFOd/Oioqo9WOFBY/dKEsM/H9p+1ysoDaBE/+BWwuoUwVNUN/rGzee6Zex
+      pENHLTyuC003KWuzY0UuJm5koClDxwz0evHc1ie8AaLKYTWjnxIxwsXBP8wV
+      CS7hw3wv1i3LZQvYe8d4J+JA4LJNtGmArQMRLdEAV3wc01T/5uY=
+  - secure: |-
+      MKweZyOi59mfxr9wFgjHPBeYczqPCOnznXRIzNLyS5g5ujuDFckR+B9XzyvI
+      OT23hynAgUCQS0QUT2FL9QceHbrt6qxLDjnpjuajI7UTVXYtAd/xnJcJcwcL
+      0+3YPcjLuJibL5TUZiH0zmZSKbiAphoKEq0n1eoghA7ig6NbFUY=
+  - secure: |-
+      gWofB77OiCzD8R4fb9Vl2f1wBK65tYpferST6QCPfTzvlXjuBsg5gxUNj4sq
+      F2TzhajQQ86g7wIC9FThkK41tqRteAedQcEHmJpAlomrb6VsB3WAbUk6r+8D
+      u5kQ+VJ5DCCH8UMfKbEtPOFo4mBVUYN02ns7Bzsg4tOUqGwQT38=
+  - secure: |-
+      IgjtchNhouuZTpwvqP/futixsGCLvOvnEufCvgHmgSAI7sW6Ki/PSerufm1O
+      cin5Y4d4ffaqHf3YcjBk+ed/qpimsofbT4ySihBf/XkF7VRyNgAzganhRM4J
+      R9WHllzlpnXnfbIS39oiHRjUKXDIOJcOL+T2LWvluRoaNnwFSy4=
+  - secure: |-
+      PicM23f7Q9dFhTxx+XgQxEyzOjiaDx1r+yWk65gY3fISS+YMZKyWbGHx0SPX
+      XQsmqmgOp86gWqZNia3iMR62yOWQv9EZFVqGjWZXYtuSi7+x2w51+hHOa2yF
+      YG6w0n9magzsUedA3z+uYr7zozT9BjNu7PylCr2JnJntmV3/l5g=
+  - secure: |-
+      gxKxOM+A8MCp2tFZWjvEJjpw56GaI+rwk6v04NzGEj+YxhA1qojNA3hfB0uq
+      iUNhUOsFIONiTHZiSdx6upY98cxlqEcEfOu7jY4vNKQhT1wHtpLUSUA2T1E5
+      75FRsMN5BkE1bNO9hyOISFcyE7NycN+Bc8ZmtbQCgiNT8KK5qaM=
+  - secure: |-
+      bXWVt0kRtns47HPObz41VuF9PCRD0HMps/EDPZP5ozqpLP19ac/ZyN51KJ6E
+      CrZjgFYrhS5d31iJNrqpFukisdEfYDjDl+sVpHiVSZrADAUo4fzgHfafwoxg
+      6MoPzWT5RgSEryPlNoGzohC1aDkGVPkyUFUBlp/ZRn1efiCxZpM=
+  - secure: |-
+      QqTWtKqo0NKfRpuH/WXjnPSFG7d5iXJZdY5gPXMIn6kgD4cvlbVFRFR2XtJg
+      bDl+juNvy+f5ly7ZeCNHiktKYAbnDZC3XMC73a/1ZTFpcf8SuW6vqADuKxIX
+      jL6gOJ9Ya+Cb3GVZGC4xLimmYGO47mt/EIEgU7eZqMlCxgDHQbs=
+  - secure: |-
+      NY8obpoGa4ceC0DLInPZzbmofo5iIJVKRILLbG3yqbGMwZsYJoQ7VhB8UlIw
+      LGCsnOyvfUynA0+7bQdsfESehuvss3ywc5Wi4ZrQkV0M1PxtTdu4BJgNWrNp
+      h9Cx7Wkv2kmpuPjyYBnsOCgQitItNVlf57y8ZDEE193qbzui1cM=
+  - secure: |-
+      MCL9Eh13zTwCcjGXBpOnGkliAlg7ufJH/d2+45dERJuTSvG7ir/Qu7VoQKIw
+      /Y0Jd22JlYuC3M8LQVpr20Y4prAlVMfN/RHKe3CVyVjwot8XtA0vJvhr6RNO
+      KhBkxdHG8+Ho3mQyx67MSF4sJ88sZ5BPOsPZeIWVQ7mP5KFFUEg=
+  - secure: |-
+      A/cSs2f4bx05l2yMmSynoe0chDC5iP3ZuuymvXHndBcUH3Z+oSe1uN9Qvbmp
+      hpjvdG4WfQYrjup3XAav0f8YTXPMg5Y343+n4ZQAn1t/Ymm3jy0mij/KmQIC
+      xOJhAJnrTC+hrJ64MFp/QA6YdG5J7n9iZ+6X/ejGpWImfDb+VHg=
+  - secure: |-
+      P/1JHsfUFNFbC4CAJxk0Hyof0whwDaMZM2DMNbZpB0unneQg5WkpGQtFbm83
+      WVF0IX8oq+4wUbmWIOVgybjjMnGiVzK+6TrhdAx0BKDIvp+xWnp9QuvmhjVs
+      5RBz21gR8CvKZuy7FUbIW6efnvw+pH52tV7dKi+wo5ldj1exlx8=
+  - secure: |-
+      BLSAv5m5NPjdsQDjLJSsO88BWqCRhpfsKskFAWuPqfQiEI72VMAo3w5OlHsa
+      4UD9f9tPHozMcGYBVuJdvSjo09z55f9yS8G1BIj2weCPlrGqD0XGAtBPNZVD
+      5BFnI+Q42zvSnMXKQBeDxfLD2/g7Wz++K5dq877jhLoSSoevqwY=
+  - secure: |-
+      Dn0pRtXm6dwTvmdFPj8XiabjFPh7aFpS5mLEDU5wRgaiSZrOM5QvXxpdgk3q
+      tPmAhQAKT6KGur+0Vto1GzXmaMCR6Tgws7kMPu8Z+iXVm4l8ESkjBM7jApG3
+      3KosOYTQZhaRTtuCgehVZBcEyaFwzI4qgATMwU1xQ5O7Ezw84Dg=
+  - secure: |-
+      OUmBH4thjkIFv2jd5bdiMaUYtO5wq38Gah9lIbAe8fXQS7qpY3TWyeG+9pkF
+      CIP0uo6TlgACAAuuayWDLjL/D+u5f11Cbj17T+YU+ikBADgNKOsUe7aosGhA
+      xE+yfoOJbtyXz1z2QOOmMFpYdZHRjo7N0m/OViqXtCATKid9OH4=
+  - secure: |-
+      Y5ozBVfTHnmtaSx3eV04LPLlNWkfda+pmTlyuirVCEhne6lPo7INoZo2XZUn
+      rOYmxqrJVSY+Iulf60M7bMEBdvLMl6du+45tVMO7hn+el1Q8wwuoPVH71cTg
+      4JGEFPp+FpED6R3nRLZ2ZfA8NqiBfjU/VMSV/weaZVT2hmtZANM=
+
