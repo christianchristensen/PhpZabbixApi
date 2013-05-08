@@ -3,7 +3,7 @@ php:
   - 5.3
 branches:
   except:
-    - gh-pages
+    - build
 before_script:
   - sudo apt-get install subversion
 script:

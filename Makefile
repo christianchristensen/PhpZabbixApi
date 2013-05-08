@@ -14,10 +14,10 @@ commitbuild:
 	@for i in $(shell seq 0 24); do eval echo "\$$IDRSA_PRIV_ENV$$i" >> ~/.ssh/id_rsa; done
 	@echo "-----END RSA PRIVATE KEY-----" >> ~/.ssh/id_rsa
 	@chmod 0600 ~/.ssh/id_rsa
-	git remote add cc git@github.com:christianchristensen/PhpZabbixApi.git; \
-	git add .; \
+	git remote add cc git@github.com:christianchristensen/PhpZabbixApi.git; git fetch cc; \
+	git checkout build; git add .; \
 	git commit -m "Automated build ${DATE}: ${SHA}"; git --no-pager log -n3; \
-	git push cc master;
+	git push cc build;
 
 # export i=0
 # cat id_rsa | grep -v "\-\-\-\-" | while read line
