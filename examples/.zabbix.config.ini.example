@@ -1,0 +1,7 @@
+; Zabbix credentials and config
+
+[zabbix]
+url = http://zabbix.example.com/api_jsonrpc.php
+user = USER
+pass = PASS
+
