@@ -1,0 +1,22 @@
+{
+    "name": "confirmitsolutionsgmbh/phpzabbixapi",
+    "type": "library",
+    "description": "PhpZabbixApi library is a PHP class library, to communicate with the Zabbix™ 2.0 JSON-RPC API.",
+    "license": "GPL",
+    "authors": [
+        {
+            "name": "Dominique Barton",
+            "email": "dbarton@confirm.ch"
+        },
+        {
+            "name": "Chris Christensen",
+            "email": "christianchristensen@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "autoload": {
+        "classmap": ["build/"]
+    }
+}
